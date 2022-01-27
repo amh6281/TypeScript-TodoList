@@ -3,6 +3,7 @@ import { idText } from "typescript";
 import "./App.css";
 import InputFeild from "./components/InputFeild";
 import { Todo } from "./model";
+import TodoList from "./components/TodoList";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -23,9 +24,7 @@ const App: React.FC = () => {
     <div className="App">
       <span className="heading">ToDo-List</span>
       <InputFeild todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      {todos.map((t) => (
-        <li>{t.todo}</li>
-      ))}
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
